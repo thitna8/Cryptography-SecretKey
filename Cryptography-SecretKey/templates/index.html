@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secret Key Encryption</title>
+    <link rel="stylesheet" href="../static/style.css">
+
+</head>
+<body>
+    <h1>Secret Key Encryption</h1>
+    <form method="POST">
+        Client ID: <input type="text" name="client_id" required><br><br>
+        Message: <textarea name="message" rows="4" cols="50" required></textarea><br><br>
+        <input style="width: 150px; color: rgb(255, 255, 255); background-color: rgb(43, 73, 226); height: 50px;" type="submit" value="Encrypt and Log">
+    </form>
+    
+    {% if output %}
+        <div class="result-box">
+            <h2 style="color: blueviolet;">Results</h2>
+            <p><strong>Encrypted Message (Hex):</strong></p>
+            <div class="encrypted-message">{{ output['ciphertext'] }}</div>
+            <p><strong>Decrypted Message:</strong> {{ output['decrypted'] }}</p>
+            <p><strong>Status:</strong> Message encrypted and logged successfully.</p>
+        </div>
+    {% endif %}
+</body>
+</html>
